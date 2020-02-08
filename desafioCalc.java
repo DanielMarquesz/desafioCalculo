@@ -4,7 +4,7 @@
  */
 package desafiocalc;
 
-public class DesafioCalc {
+public class desafioCalc {
 
      public static void main(String[] args) {
          
@@ -12,20 +12,21 @@ public class DesafioCalc {
          /* Variáveis Deaclaradas */
          
         float var = 0;
-        float descDepen = 0;
+        float descDependente = 0;
         float descontoINSS = 0;
         float descontoIRPF = 0;
         float salarioBase = 0;
         float salarioFinal = 0;
+        float valDependente = 189.59f;
          
         /* Entrada de Dados */
-        float salario = 2000.00f;
-        int dependentes = 0;
+        float salario = 6000.00f;
+        int dependentes = 2;
             
          System.out.println("###################################################");
          
          
-         /** Cálculo do desconto INSS **/
+         /* Cálculo do desconto INSS */
          
          if ((salario >= 0) && (salario <= 1751.81)) {                /* Salários abaixo de 1751.81 */
              descontoINSS = salario * 0.08f;
@@ -54,8 +55,14 @@ public class DesafioCalc {
          
          salarioBase = salario - descontoINSS;
          salarioFinal = salarioBase;
-                
+         /* System.out.println(salarioFinal); */
+         
          /** Calculo do desconto de Dependentes **/
+         
+         if (dependentes != 0){
+             descDependente = dependentes * valDependente;
+             System.out.println(descDependente);
+         }
     }
     
 }
